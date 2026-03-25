@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.png
+temp_upload.jpg
+.DS_Store
