@@ -80,7 +80,7 @@ def preset_background_blur(img, exif_text):
 
 # --- アプリの画面UI ---
 # 画像アップローダー
-uploaded_file = st.file_uploader("X100VIなどの写真をアップロードしてください (JPG)", type=['jpg', 'jpeg'])
+uploaded_file = st.file_uploader("X100VIなどの写真をアップロードしてください、enjoy! (JPG)", type=['jpg', 'jpeg'])
 
 if uploaded_file is not None:
     # 1. 一時的に画像を保存してExifToolで読み込めるようにする
