@@ -134,3 +134,6 @@ if uploaded_file is not None:
             file_name=f"processed_{uploaded_file.name}",
             mime="image/jpeg"
         )
+
+# 適当な行に追加
+st.write("Current Device: Fujifilm X100VI")
