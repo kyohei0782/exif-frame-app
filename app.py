@@ -134,4 +134,5 @@ if uploaded_file is not None:
             file_name=f"processed_{uploaded_file.name}",
             mime="image/jpeg"
         )
-
+### めも
+### python3 -m streamlit run app.py
