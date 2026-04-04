@@ -7,7 +7,7 @@ import io
 
 # --- ページの設定 ---
 st.set_page_config(page_title="My Photo Frame App", layout="centered")
-st.title("📷 シネマティック Exif フレーム作成")
+st.title("Exif フレーム作成")
 
 # --- Exif取得関数 ---
 def get_exif_with_exiftool(path):
@@ -20,13 +20,13 @@ def get_exif_with_exiftool(path):
 
 def format_exif_text(exif_data):
     if not exif_data:
-        return ["SHOT ON ??", "?? // f/?? // ?? // ISO ??"]
+        return ["SHOT ON ??", "?? / f/?? / ?? / ISO ??"]
     film = exif_data.get("FilmMode", "STD").upper()
     f_num = f"f/{exif_data.get('FNumber', '??')}"
     ss = exif_data.get('ExposureTime', '??')
     iso = f"ISO {exif_data.get('ISO', '??')}"
     model = exif_data.get("Model", "CAMERA").upper()
-    return [f"SHOT ON {model}", f"{film} // {f_num} // {ss} // {iso}"]
+    return [f"SHOT ON {model}", f"{film} / {f_num} / {ss} / {iso}"]
 
 def get_font(canvas_h):
     font_size = int(canvas_h * 0.03) 
@@ -80,7 +80,7 @@ def preset_background_blur(img, exif_text):
 
 # --- アプリの画面UI ---
 # 画像アップローダー
-uploaded_file = st.file_uploader("X100VIなどの写真をアップロードしてください、 (JPG)", type=['jpg', 'jpeg'])
+uploaded_file = st.file_uploader("写真をアップロードしてください、 (JPG)", type=['jpg', 'jpeg'])
 
 if uploaded_file is not None:
     # 1. 一時的に画像を保存してExifToolで読み込めるようにする
